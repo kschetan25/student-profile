@@ -1,0 +1,141 @@
+<div>
+  <div class="student-major">
+    <span
+      >Name: {{ student.lastName }}, {{ student.firstName }} (
+      {{ student.rNum }} | {{ student.effTerm }} )
+    </span>
+  </div>
+  <hr />
+  <div class="d-flex justify-content-center">
+    <table>
+      <tr>
+        <th>
+          <label> Program Effective Term: </label>
+        </th>
+        <td>
+          <select [(ngModel)]="selectedCar" [value]="selectedCar">
+            <option *ngFor="let term of termOptions" value="{{ term.name }}">
+              {{ term.name }}
+            </option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="student-status">
+    <span>Confidential: </span>
+    <span>Athlete: </span>
+    <span>Holds: </span>
+    <span>Enrl Hrs: </span>
+    <span>Graduation: </span>
+    <span>Probation: </span>
+  </div>
+  <div class="student-details">
+    <div class="st-img">
+      <img class="rounded-circle" src="assets/p1.jpg" alt="pic1" />
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <b>RNumber:</b> {{ student.rNum }} <br />
+          <b>Name:</b> {{ student.lastName }}, {{ student.firstName }}<br />
+          <b>Email:</b>
+          <a href="mailto:{{ student.email }}">{{ student.email }}</a> <br />
+          <b>Classification:</b> {{ student.classification }}<br />
+          <b>TTU GPA:</b> {{ student.ttuGpa }}<br />
+          <b>Current Major:</b> {{ student.currMaj }}<br />
+          <b>Expected Graduation:</b> {{ student.expGrad }}<br />
+          <div
+            style="border: 1px solid; border-radius: 3px; margin-top: 10px"
+            class="d-flex justify-content-center"
+          >
+            HS-BS-RHIM 89%
+          </div>
+        </div>
+        <div class="col-sm">
+          <b>Effective Term:</b> {{ student.effTerm }}<br />
+          <b>Status:</b> {{ student.status }}<br />
+          <b>Site:</b> {{ student.site.siteName }}<br />
+          <ul>
+            <li *ngFor="let sm of student.site.siteSum">
+              <b>{{ sm.name }}:</b> {{ sm.val | number: "1.1-3" }}&#37;
+            </li>
+          </ul>
+          <b>Campus:</b> {{ student.campus.campName }}<br />
+          <ul>
+            <li>
+              <b>Physical Campus Count:</b> {{ student.campus.phyCampCnt }}
+            </li>
+            <li>
+              <b>Physical Campus Count:</b> {{ student.campus.enrllByCamp }}
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm">
+          <div class="container st-links">
+            <div
+              style="background-color: #347ab9"
+              class="row d-flex justify-content-center"
+            >
+              <a style="color: aliceblue" href="#"> &#43; ADD REQUEST </a>
+            </div>
+            <div
+              style="background-color: #5bb75d"
+              class="row d-flex justify-content-center"
+            >
+              <a style="color: aliceblue" href="#">
+                TIME TICKETS
+                <span style="background-color: white; color: black">1</span>
+              </a>
+            </div>
+            <div
+              style="background-color: #5ac1df"
+              class="row d-flex justify-content-center"
+            >
+              <a style="color: aliceblue" href="#">
+                PERMITS
+                <span style="background-color: white; color: black">0</span></a
+              >
+            </div>
+            <div
+              style="background-color: #878696"
+              class="row d-flex justify-content-center"
+            >
+              <a style="color: aliceblue" href="#"> WOAHOLD </a
+              ><em class="far fa-external-link"></em>
+            </div>
+            <div
+              style="background-color: #595c69"
+              class="row d-flex justify-content-center"
+            >
+              <a style="color: aliceblue" href="#"> COHORTS</a>
+            </div>
+            <div
+              style="background-color: #d8554d"
+              class="row d-flex justify-content-center"
+            >
+              <a style="color: aliceblue" href="#"> STRIVE.TTU.EDU</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="student-links">
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Menu 1</a></li>
+        <li><a href="#">Menu 2</a></li>
+        <li><a href="#">Menu 3</a></li>
+      </ul>
+      <br />
+      <p>
+        <strong>Note:</strong> This example shows how to create a basic
+        navigation tab. It is not toggleable/dynamic yet (you can't click on the
+        links to display different content)- see the last example in the
+        Bootstrap Tabs and Pills Tutorial to find out how this can be done.
+      </p>
+    </div>
+  </div>
+</div>
